@@ -3,7 +3,6 @@ package com.example.quezapp
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -11,14 +10,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       //val welcomeText: TextView = findViewById(R.id.textView)
+        // val welcomeText: TextView = findViewById(R.id.textView)  //Removed as the id textView does not exist
         val startButton: Button = findViewById(R.id.button)
 
+        // Set an action to perform when the start button is clicked
         startButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//            finish()
+            // Create an Intent to start the FlashcardActivity
+            val intent = Intent(this, Flashcard::class.java)  //Changed Flashcard to FlashcardActivity
+            startActivity(intent) // Start the new activity
+            // finish() // Optional: Close MainActivity so user can't go back to it
         }
     }
 }
+
 
